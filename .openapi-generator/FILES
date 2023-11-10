@@ -2,6 +2,7 @@
 README.md
 api.module.ts
 api/api.ts
+api/default.service.ts
 configuration.ts
 encoder.ts
 git_push.sh
@@ -11,6 +12,9 @@ model/badRequestError400ResponseError.ts
 model/baseError.ts
 model/forbiddenError403Response.ts
 model/forbiddenError403ResponseError.ts
+model/generalLedgerAccountResponse.ts
+model/generalLedgerAccountType.ts
+model/getGeneralLedgerAccounts200Response.ts
 model/internalServerError500Response.ts
 model/internalServerError500ResponseError.ts
 model/models.ts
