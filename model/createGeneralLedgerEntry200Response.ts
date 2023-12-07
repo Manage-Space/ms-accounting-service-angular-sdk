@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
+import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
 
 
-export interface BadRequestError400Response { 
-    readonly data: Array<string>;
-    readonly success: boolean;
-    error: BadRequestError400ResponseError;
+export interface CreateGeneralLedgerEntry200Response { 
+    data?: Array<GeneralLedgerEntryResponse>;
+    success?: boolean;
+    error?: object;
 }
 

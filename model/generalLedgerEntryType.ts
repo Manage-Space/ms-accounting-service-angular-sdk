@@ -9,12 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { BadRequestError400ResponseError } from './badRequestError400ResponseError';
 
 
-export interface BadRequestError400Response { 
-    readonly data: Array<string>;
-    readonly success: boolean;
-    error: BadRequestError400ResponseError;
-}
+export type GeneralLedgerEntryType = 'invoice';
+
+export const GeneralLedgerEntryType = {
+    Invoice: 'invoice' as GeneralLedgerEntryType
+};
 
