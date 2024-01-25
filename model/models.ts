@@ -1,3 +1,4 @@
+export * from './accountReceivableResponse';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';
 export * from './baseError';
@@ -10,6 +11,7 @@ export * from './generalLedgerAccountResponse';
 export * from './generalLedgerAccountType';
 export * from './generalLedgerEntryResponse';
 export * from './generalLedgerEntryType';
+export * from './getAccountsReceivable200Response';
 export * from './getGeneralLedgerAccounts200Response';
 export * from './internalServerError500Response';
 export * from './internalServerError500ResponseError';

@@ -7,6 +7,7 @@ configuration.ts
 encoder.ts
 git_push.sh
 index.ts
+model/accountReceivableResponse.ts
 model/badRequestError400Response.ts
 model/badRequestError400ResponseError.ts
 model/baseError.ts
@@ -19,6 +20,7 @@ model/generalLedgerAccountResponse.ts
 model/generalLedgerAccountType.ts
 model/generalLedgerEntryResponse.ts
 model/generalLedgerEntryType.ts
+model/getAccountsReceivable200Response.ts
 model/getGeneralLedgerAccounts200Response.ts
 model/internalServerError500Response.ts
 model/internalServerError500ResponseError.ts
