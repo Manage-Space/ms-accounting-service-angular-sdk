@@ -37,6 +37,10 @@ export interface AccountReceivableResponse {
      */
     closingBalance: number;
     /**
+     * Check asset amount.
+     */
+    payments: number;
+    /**
      * Fee income.
      */
     feeIncome: number;
