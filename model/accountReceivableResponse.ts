@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { AccountReceivableIncome } from './accountReceivableIncome';
 
 
 export interface AccountReceivableResponse { 
@@ -41,20 +42,8 @@ export interface AccountReceivableResponse {
      */
     payments: number;
     /**
-     * Fee income.
+     * Income details.
      */
-    feeIncome: number;
-    /**
-     * Merchandise income.
-     */
-    merchandiseIncome: number;
-    /**
-     * Rental income.
-     */
-    rentalIncome: number;
-    /**
-     * Other income.
-     */
-    otherIncome: number;
+    income: Array<AccountReceivableIncome>;
 }
 

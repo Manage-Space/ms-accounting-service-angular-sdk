@@ -1,3 +1,5 @@
+export * from './accountReceivableIncome';
+export * from './accountReceivableIncomeType';
 export * from './accountReceivableResponse';
 export * from './badRequestError400Response';
 export * from './badRequestError400ResponseError';

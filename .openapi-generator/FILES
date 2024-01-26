@@ -7,6 +7,8 @@ configuration.ts
 encoder.ts
 git_push.sh
 index.ts
+model/accountReceivableIncome.ts
+model/accountReceivableIncomeType.ts
 model/accountReceivableResponse.ts
 model/badRequestError400Response.ts
 model/badRequestError400ResponseError.ts
