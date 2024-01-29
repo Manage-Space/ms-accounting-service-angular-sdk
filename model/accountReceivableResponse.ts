@@ -45,5 +45,13 @@ export interface AccountReceivableResponse {
      * Income details.
      */
     income: Array<AccountReceivableIncome>;
+    /**
+     * Additions.
+     */
+    additions: number;
+    /**
+     * Subtractions.
+     */
+    subtractions: number;
 }
 
