@@ -9,10 +9,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { AccountReceivableIncome } from './accountReceivableIncome';
+import { CheckAssetType } from './checkAssetType';
 
 
-export interface AccountReceivableResponse { 
+export interface CheckAssetEntryResponse { 
+    /**
+     * Check Asset Entry ID.
+     */
+    checkAssetEntryId: string;
     /**
      * Ledger ID.
      */
@@ -30,28 +34,20 @@ export interface AccountReceivableResponse {
      */
     locationId: string | null;
     /**
-     * Opening balance.
+     * Amount.
      */
-    openingBalance: number;
+    amount: number;
     /**
-     * Closing balance.
+     * Description.
      */
-    closingBalance: number;
+    description: string | null;
+    checkAssetType: CheckAssetType;
     /**
-     * Check asset amount.
+     * The date the entry was made.
      */
-    payments: number;
-    /**
-     * Income details.
-     */
-    income: Array<AccountReceivableIncome>;
-    /**
-     * Additions.
-     */
-    additions: number;
-    /**
-     * Subtractions.
-     */
-    subtractions: number;
+    entryDate: string;
 }
+export namespace CheckAssetEntryResponse {
+}
+
 
