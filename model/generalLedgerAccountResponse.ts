@@ -26,6 +26,22 @@ export interface GeneralLedgerAccountResponse {
      * General Ledger Account Description
      */
     description: string;
+    /**
+     * Organization ID.
+     */
+    orgId: string;
+    /**
+     * Site ID.
+     */
+    siteId: string;
+    /**
+     * Credits.
+     */
+    credits: number;
+    /**
+     * Debits.
+     */
+    debits: number;
 }
 export namespace GeneralLedgerAccountResponse {
 }

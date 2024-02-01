@@ -6,6 +6,8 @@ export * from './badRequestError400ResponseError';
 export * from './baseError';
 export * from './checkAssetEntryResponse';
 export * from './checkAssetType';
+export * from './createGeneralLedgerAccountRequest';
+export * from './createGeneralLedgerAccountsRequest';
 export * from './createGeneralLedgerEntry200Response';
 export * from './createGeneralLedgerEntryRequest';
 export * from './createGeneralLedgerLineItemRequest';

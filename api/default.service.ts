@@ -21,6 +21,8 @@ import { Observable }                                        from 'rxjs';
 // @ts-ignore
 import { BadRequestError400Response } from '../model/badRequestError400Response';
 // @ts-ignore
+import { CreateGeneralLedgerAccountsRequest } from '../model/createGeneralLedgerAccountsRequest';
+// @ts-ignore
 import { CreateGeneralLedgerEntry200Response } from '../model/createGeneralLedgerEntry200Response';
 // @ts-ignore
 import { CreateGeneralLedgerEntryRequest } from '../model/createGeneralLedgerEntryRequest';
@@ -111,6 +113,86 @@ export class DefaultService {
             throw Error("key may not be null if value is not object or array");
         }
         return httpParams;
+    }
+
+    /**
+     * Create multiple general ledger accounts
+     * Create multiple general ledger accounts
+     * @param orgId The Organization ID
+     * @param createGeneralLedgerAccountsRequest 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public createGeneralLedgerAccounts(orgId: string, createGeneralLedgerAccountsRequest: CreateGeneralLedgerAccountsRequest, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetGeneralLedgerAccounts200Response>;
+    public createGeneralLedgerAccounts(orgId: string, createGeneralLedgerAccountsRequest: CreateGeneralLedgerAccountsRequest, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetGeneralLedgerAccounts200Response>>;
+    public createGeneralLedgerAccounts(orgId: string, createGeneralLedgerAccountsRequest: CreateGeneralLedgerAccountsRequest, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetGeneralLedgerAccounts200Response>>;
+    public createGeneralLedgerAccounts(orgId: string, createGeneralLedgerAccountsRequest: CreateGeneralLedgerAccountsRequest, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling createGeneralLedgerAccounts.');
+        }
+        if (createGeneralLedgerAccountsRequest === null || createGeneralLedgerAccountsRequest === undefined) {
+            throw new Error('Required parameter createGeneralLedgerAccountsRequest was null or undefined when calling createGeneralLedgerAccounts.');
+        }
+
+        let localVarHeaders = this.defaultHeaders;
+
+        let localVarCredential: string | undefined;
+        // authentication (bearer) required
+        localVarCredential = this.configuration.lookupCredential('bearer');
+        if (localVarCredential) {
+            localVarHeaders = localVarHeaders.set('Authorization', 'Bearer ' + localVarCredential);
+        }
+
+        let localVarHttpHeaderAcceptSelected: string | undefined = options && options.httpHeaderAccept;
+        if (localVarHttpHeaderAcceptSelected === undefined) {
+            // to determine the Accept header
+            const httpHeaderAccepts: string[] = [
+                'application/json;v=1'
+            ];
+            localVarHttpHeaderAcceptSelected = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        }
+        if (localVarHttpHeaderAcceptSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Accept', localVarHttpHeaderAcceptSelected);
+        }
+
+        let localVarHttpContext: HttpContext | undefined = options && options.context;
+        if (localVarHttpContext === undefined) {
+            localVarHttpContext = new HttpContext();
+        }
+
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+            'application/json'
+        ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            localVarHeaders = localVarHeaders.set('Content-Type', httpContentTypeSelected);
+        }
+
+        let responseType_: 'text' | 'json' | 'blob' = 'json';
+        if (localVarHttpHeaderAcceptSelected) {
+            if (localVarHttpHeaderAcceptSelected.startsWith('text')) {
+                responseType_ = 'text';
+            } else if (this.configuration.isJsonMime(localVarHttpHeaderAcceptSelected)) {
+                responseType_ = 'json';
+            } else {
+                responseType_ = 'blob';
+            }
+        }
+
+        let localVarPath = `/accounting/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/general-ledger-accounts`;
+        return this.httpClient.request<GetGeneralLedgerAccounts200Response>('post', `${this.configuration.basePath}${localVarPath}`,
+            {
+                context: localVarHttpContext,
+                body: createGeneralLedgerAccountsRequest,
+                responseType: <any>responseType_,
+                withCredentials: this.configuration.withCredentials,
+                headers: localVarHeaders,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
     }
 
     /**
@@ -456,15 +538,38 @@ export class DefaultService {
     }
 
     /**
-     * Get list of general ledger accounts
-     * Get list of general ledger accounts
+     * Get list of general ledger accounts for site
+     * Get list of general ledger accounts for site
+     * @param orgId The Organization ID
+     * @param siteId The Site ID
+     * @param dateTo 
+     * @param dateFrom 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getGeneralLedgerAccounts(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetGeneralLedgerAccounts200Response>;
-    public getGeneralLedgerAccounts(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetGeneralLedgerAccounts200Response>>;
-    public getGeneralLedgerAccounts(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetGeneralLedgerAccounts200Response>>;
-    public getGeneralLedgerAccounts(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
+    public getGeneralLedgerAccounts(orgId: string, siteId: string, dateTo: string, dateFrom?: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<GetGeneralLedgerAccounts200Response>;
+    public getGeneralLedgerAccounts(orgId: string, siteId: string, dateTo: string, dateFrom?: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpResponse<GetGeneralLedgerAccounts200Response>>;
+    public getGeneralLedgerAccounts(orgId: string, siteId: string, dateTo: string, dateFrom?: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<HttpEvent<GetGeneralLedgerAccounts200Response>>;
+    public getGeneralLedgerAccounts(orgId: string, siteId: string, dateTo: string, dateFrom?: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json;v&#x3D;1', context?: HttpContext}): Observable<any> {
+        if (orgId === null || orgId === undefined) {
+            throw new Error('Required parameter orgId was null or undefined when calling getGeneralLedgerAccounts.');
+        }
+        if (siteId === null || siteId === undefined) {
+            throw new Error('Required parameter siteId was null or undefined when calling getGeneralLedgerAccounts.');
+        }
+        if (dateTo === null || dateTo === undefined) {
+            throw new Error('Required parameter dateTo was null or undefined when calling getGeneralLedgerAccounts.');
+        }
+
+        let localVarQueryParameters = new HttpParams({encoder: this.encoder});
+        if (dateFrom !== undefined && dateFrom !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>dateFrom, 'dateFrom');
+        }
+        if (dateTo !== undefined && dateTo !== null) {
+          localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
+            <any>dateTo, 'dateTo');
+        }
 
         let localVarHeaders = this.defaultHeaders;
 
@@ -504,10 +609,11 @@ export class DefaultService {
             }
         }
 
-        let localVarPath = `/accounting/general-ledger-accounts`;
+        let localVarPath = `/accounting/orgs/${this.configuration.encodeParam({name: "orgId", value: orgId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/sites/${this.configuration.encodeParam({name: "siteId", value: siteId, in: "path", style: "simple", explode: false, dataType: "string", dataFormat: undefined})}/general-ledger-accounts`;
         return this.httpClient.request<GetGeneralLedgerAccounts200Response>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
+                params: localVarQueryParameters,
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
                 headers: localVarHeaders,

@@ -11,13 +11,14 @@
  */
 
 
-export type GeneralLedgerAccountType = 'asset' | 'liability' | 'equity' | 'revenue' | 'expense';
+export type GeneralLedgerAccountType = 'asset' | 'liability' | 'equity' | 'revenue' | 'expense' | 'suspense';
 
 export const GeneralLedgerAccountType = {
     Asset: 'asset' as GeneralLedgerAccountType,
     Liability: 'liability' as GeneralLedgerAccountType,
     Equity: 'equity' as GeneralLedgerAccountType,
     Revenue: 'revenue' as GeneralLedgerAccountType,
-    Expense: 'expense' as GeneralLedgerAccountType
+    Expense: 'expense' as GeneralLedgerAccountType,
+    Suspense: 'suspense' as GeneralLedgerAccountType
 };
 
