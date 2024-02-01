@@ -16,11 +16,15 @@ export interface CreateGeneralLedgerAccountRequest {
     /**
      * Title of the account
      */
-    title?: string;
+    title: string;
     /**
      * Description of the account
      */
     description?: string;
+    /**
+     * Alias for the account
+     */
+    alias?: string;
     generalLedgerAccountType: GeneralLedgerAccountType;
 }
 export namespace CreateGeneralLedgerAccountRequest {

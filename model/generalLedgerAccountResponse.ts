@@ -17,7 +17,7 @@ export interface GeneralLedgerAccountResponse {
      * General Ledger Account ID.
      */
     generalLedgerAccountId: string;
-    type: GeneralLedgerAccountType;
+    generalLedgerAccountType: GeneralLedgerAccountType;
     /**
      * General Ledger Account Title
      */
@@ -25,7 +25,11 @@ export interface GeneralLedgerAccountResponse {
     /**
      * General Ledger Account Description
      */
-    description: string;
+    description: string | null;
+    /**
+     * Alias for the Account
+     */
+    alias: string | null;
     /**
      * Organization ID.
      */
