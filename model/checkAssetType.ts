@@ -11,7 +11,7 @@
  */
 
 
-export type CheckAssetType = 'ach_debit' | 'afterpay_clearpay' | 'alipay' | 'amex_credit' | 'amex_debit' | 'apple_pay' | 'bacs_debit' | 'bancontact' | 'bank_transfer' | 'cash' | 'check' | 'diners_card' | 'discover_credit' | 'discover_debit' | 'eps' | 'giropay' | 'google_pay' | 'ideal' | 'klarna' | 'mastercard_credit' | 'mastercard_debit' | 'multibanco' | 'oxxo' | 'p24' | 'paypal' | 'sepa_debit' | 'sofort' | 'visa_credit' | 'visa_debit' | 'wechat_pay';
+export type CheckAssetType = 'ach_debit' | 'afterpay_clearpay' | 'alipay' | 'amex_credit' | 'amex_debit' | 'apple_pay' | 'bacs_debit' | 'bancontact' | 'bank_transfer' | 'cash' | 'check' | 'diners_card' | 'discover_credit' | 'discover_debit' | 'eps' | 'giropay' | 'google_pay' | 'ideal' | 'klarna' | 'mastercard_credit' | 'mastercard_debit' | 'multibanco' | 'oxxo' | 'other' | 'p24' | 'paypal' | 'sepa_debit' | 'sofort' | 'visa_credit' | 'visa_debit' | 'wechat_pay';
 
 export const CheckAssetType = {
     AchDebit: 'ach_debit' as CheckAssetType,
@@ -37,6 +37,7 @@ export const CheckAssetType = {
     MastercardDebit: 'mastercard_debit' as CheckAssetType,
     Multibanco: 'multibanco' as CheckAssetType,
     Oxxo: 'oxxo' as CheckAssetType,
+    Other: 'other' as CheckAssetType,
     P24: 'p24' as CheckAssetType,
     Paypal: 'paypal' as CheckAssetType,
     SepaDebit: 'sepa_debit' as CheckAssetType,

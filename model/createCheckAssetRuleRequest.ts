@@ -9,13 +9,17 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CheckAssetType } from './checkAssetType';
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
+export interface CreateCheckAssetRuleRequest { 
+    /**
+     * General Ledger Account ID
+     */
+    generalLedgerAccountId: string;
+    checkAssetType: CheckAssetType;
+}
+export namespace CreateCheckAssetRuleRequest {
+}
 
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
-};
 

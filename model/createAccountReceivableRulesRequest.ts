@@ -9,13 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CreateAccountReceivableRuleRequest } from './createAccountReceivableRuleRequest';
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
-
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
-};
+export interface CreateAccountReceivableRulesRequest { 
+    /**
+     * Account receivable rules
+     */
+    accountReceivableRules: Array<CreateAccountReceivableRuleRequest>;
+}
 

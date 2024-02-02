@@ -9,13 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CreateFeeIncomeRuleRequest } from './createFeeIncomeRuleRequest';
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
-
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
-};
+export interface CreateFeeIncomeRulesRequest { 
+    /**
+     * Fee income rules
+     */
+    feeIncomeRules: Array<CreateFeeIncomeRuleRequest>;
+}
 

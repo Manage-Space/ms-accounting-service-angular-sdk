@@ -11,11 +11,11 @@
  */
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
+export type AccountReceivableType = 'rent' | 'fee' | 'other';
 
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
+export const AccountReceivableType = {
+    Rent: 'rent' as AccountReceivableType,
+    Fee: 'fee' as AccountReceivableType,
+    Other: 'other' as AccountReceivableType
 };
 

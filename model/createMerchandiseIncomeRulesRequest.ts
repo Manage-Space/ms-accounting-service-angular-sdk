@@ -9,13 +9,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { CreateMerchandiseIncomeRuleRequest } from './createMerchandiseIncomeRuleRequest';
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
-
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
-};
+export interface CreateMerchandiseIncomeRulesRequest { 
+    /**
+     * Merchandise income rules
+     */
+    merchandiseIncomeRules: Array<CreateMerchandiseIncomeRuleRequest>;
+}
 

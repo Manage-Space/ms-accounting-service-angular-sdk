@@ -9,13 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { GeneralLedgerEntryResponse } from './generalLedgerEntryResponse';
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
-
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
-};
+export interface CreateGeneralLedgerEntry201Response { 
+    data?: Array<GeneralLedgerEntryResponse>;
+    success?: boolean;
+    error?: object;
+}
 

@@ -9,13 +9,17 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { RentalIncomeType } from './rentalIncomeType';
 
 
-export type RentalIncomeType = 'other' | 'rent' | 'refund';
+export interface CreateRentalIncomeRuleRequest { 
+    /**
+     * General Ledger Account ID
+     */
+    generalLedgerAccountId: string;
+    rentalIncomeType: RentalIncomeType;
+}
+export namespace CreateRentalIncomeRuleRequest {
+}
 
-export const RentalIncomeType = {
-    Other: 'other' as RentalIncomeType,
-    Rent: 'rent' as RentalIncomeType,
-    Refund: 'refund' as RentalIncomeType
-};
 
